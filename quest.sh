@@ -37,14 +37,14 @@ while [ "$option" != "Exit" ]; do
 ## サービス名が保存されていなかった場合
         else
             echo "そのサービスは登録されていません。"
-    fi
+        fi
 
 # Exit が入力された場合
     elif [ "$option" == "Exit" ]; then
         echo "Thank you!"
 
 ## プログラムが終了
-            break
+        break
 
 # Add Password/Get Password/Exit 以外が入力された場合
     else 
