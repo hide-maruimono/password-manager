@@ -28,16 +28,20 @@ while [ "$option" != "Exit" ]; do
         read service
 
 ## サービス名が保存されていた場合
-        if grep -q "$service" "$list.txt" ; then
+        if grep -q "$service" "list.txt" ; then
+            line=$(grep "$service" "list.txt")
+            user=$(echo $line | cut -d ':' -f 2)
+            password=$(echo $line | cut -d ':' -f 3)
             echo "サービス名：$service"
             echo "ユーザー名：$user"
             echo "パスワード：$password"
-
 
 ## サービス名が保存されていなかった場合
         else
             echo "そのサービスは登録されていません。"
         fi
+        echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
+        read option
 
 # Exit が入力された場合
     elif [ "$option" == "Exit" ]; then
