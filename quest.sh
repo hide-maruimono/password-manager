@@ -1,11 +1,10 @@
 #!/bin/bash
 #user interface
-
-    echo "パスワードマネージャーへようこそ!"
-    echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
-    read option
+echo "パスワードマネージャーへようこそ!"
 
 while [ "$option" != "Exit" ]; do
+    echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
+    read option
 # Add Password が入力された場合
     if [ "$option" == "Add Password" ]; then
         echo "サービス名を入力してください："
@@ -19,8 +18,6 @@ while [ "$option" != "Exit" ]; do
 
         echo "$service:$user:$password" >> list.txt
         echo "パスワードの追加は成功しました。"
-        echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
-        read option
 
 # Get Password が入力された場合
     elif [ "$option" == "Get Password" ]; then
