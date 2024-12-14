@@ -1,6 +1,6 @@
 #!/bin/bash
 #user interface
-echo "パスワードマネージャーへようこそ："
+echo "パスワードマネージャーへようこそ!"
 
 echo "サービス名を入力してください："
 read service
@@ -13,3 +13,4 @@ read password
 
 echo "Thank you!"
 
+echo "$service:$user:$password" >> list.txt
