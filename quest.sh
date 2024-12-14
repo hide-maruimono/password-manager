@@ -7,7 +7,7 @@
 
 while [ "$option" != "Exit" ]; do
 # Add Password が入力された場合
-        if [ "$option" == "Add Password" ]; then
+    if [ "$option" == "Add Password" ]; then
         echo "サービス名を入力してください："
         read service
 
@@ -19,6 +19,8 @@ while [ "$option" != "Exit" ]; do
 
         echo "$service:$user:$password" >> list.txt
         echo "パスワードの追加は成功しました。"
+        echo "次の選択肢から入力してください(Add Password/Get Password/Exit)："
+        read option
 
 # Get Password が入力された場合
     elif [ "$option" == "Get Password" ]; then
@@ -35,17 +37,17 @@ while [ "$option" != "Exit" ]; do
 ## サービス名が保存されていなかった場合
         else
             echo "そのサービスは登録されていません。"
-        fi
+    fi
 
 # Exit が入力された場合
     elif [ "$option" == "Exit" ]; then
         echo "Thank you!"
 
 ## プログラムが終了
-        break
+            break
 
 # Add Password/Get Password/Exit 以外が入力された場合
-    else echo "入力が間違えています。Add Password/Get Password/Exit から入力してください。"
-
+    else 
+        echo "入力が間違えています。Add Password/Get Password/Exit から入力してください。"
     fi
 done
