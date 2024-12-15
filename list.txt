@@ -1,8 +1,3 @@
 service:user:password
 test:maruimono:1123
 hoge:fuga:piyo
-test:test:test
-test:test:test
-test:test:test
-test:test:test
-test:test:test
