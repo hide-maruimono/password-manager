@@ -15,12 +15,13 @@ while [ "$option" != "Exit" ]; do
 
         echo "パスワードを入力してください："
         read password
-
         echo "$service:$user:$password" >> list.txt
+        gpg -c list.txt
         echo "パスワードの追加は成功しました。"
 
 # Get Password が入力された場合
     elif [ "$option" == "Get Password" ]; then
+        gpg list.txt.gpg
         echo "サービス名を入力してください："
         read service
 
